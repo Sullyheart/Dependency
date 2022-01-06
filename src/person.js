@@ -1,3 +1,5 @@
+const colors = require('colors')
+
 class Person {
   constructor(name, age) {
     this.name = name
@@ -15,16 +17,17 @@ class Person {
     photo.likedBy.push(this)
   }
   get profile() {
-    return
-    ;`${this.name}  (${this.age})
-      BIO: ${this.bio}
+    return `
+# ${this.name.red.bgWhite}  (${this.age})
+      BIO: ${this.bio.italic}
   
-  ##Photos (${this.photos.length})
+## ${'Photos'.white.bold} (${this.photos.length})
   
   ${this.photos
     .map(photo => {
-      return `### ${photo.filename}`
-      ;`${photo.likedBy.map(person => person.name).join(',')}`
+      return `### ${photo.filename.rainbow}
+      ${photo.likedBy.map(person => person.name).join(',') || 'no likes yet!'}
+      `
     })
     .join('/n')}
       `

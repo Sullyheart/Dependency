@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "husky": {
     "hooks": {
@@ -36,5 +38,8 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.5",
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
   }
 }
